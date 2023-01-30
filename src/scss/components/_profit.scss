@@ -1,0 +1,134 @@
+.profit {
+    position: relative;
+    @include adaptiveValue("margin-top", 120, 50, 1);
+
+    @media (max-width: $md3) {
+        &:not(:last-child) {
+            margin-top: -110px;
+        } 
+    }
+
+    &-bg-1 {
+        position: absolute;
+        top: 5%;
+        right: 0;
+    }
+
+    &-bg-2 {
+        position: absolute;
+        top: 33%;
+        left: 0;
+    }
+
+    &-bg-3 {
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+    }
+
+    &-title {
+        text-align: center;
+    }
+
+    &-subtitle {
+        text-align: center;
+    }
+
+    &-wrapper {
+        @include adaptiveValue("padding-top", 100, 30, 1);
+        @include adaptiveValue("padding-bottom", 100, 30, 1);
+        padding-left: 100px;
+        padding-right: 100px;
+        background-color: rgba(216, 4, 250, 0.04);
+        box-shadow: inset 0px 1px 2px rgba(239, 232, 232, 0.6);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+
+        @media (max-width: $md2) {
+            @include adaptiveValue("padding-left", 40, 10, 1);
+            @include adaptiveValue("padding-right", 40, 10, 1);
+        }
+    }
+
+    &-info {
+        @include adaptiveValue("margin-top", 80, 30, 1);
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 15px;
+            row-gap: 30px;
+            &:nth-child(2) {
+                flex-direction: row-reverse;
+
+                @media (max-width: $md3) {
+                    flex-direction: column;
+                }
+            }
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 75, 30, 1);
+            }
+
+            @media (max-width: $md3) {
+                flex-direction: column;
+            }
+        }
+
+        &-image {
+            
+            img {
+                width: 100%;
+            }
+        } 
+
+        &-descr {
+            max-width: 52%;
+
+            @media (max-width: $md3) {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            &-title {
+                @media (max-width: $md3) {
+                    max-width: 320px;
+                    margin: 0 auto;
+                }
+            }
+
+            &-text {
+                @include adaptiveValue("margin-top", 52, 20, 1);
+            }
+        }
+    }
+
+    &-instruction {
+        @include adaptiveValue("margin-top", 80, 30, 1);
+
+        &-header {
+            display: flex;
+            justify-content: center;
+            @include adaptiveValue("margin-bottom", 60, 30, 1);
+        }
+
+        &-image {
+
+            img {
+                border-radius: 25px; 
+            }
+        }
+
+        &-descr {
+            margin-top: 1.87rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-button {
+            margin-top: 1.87rem;
+            padding: 0.75rem 2.5rem;
+        }
+    }
+}

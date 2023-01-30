@@ -1,0 +1,125 @@
+.contact {
+    @include adaptiveValue("margin-top", 100, 40, 1);
+
+    &-body {
+        position: relative;
+        z-index: 10;
+        @include adaptiveValue("padding-top", 80, 30, 1);
+        @include adaptiveValue("padding-bottom", 80, 30, 1);
+        @include adaptiveValue("padding-right", 140, 30, 1);
+        @include adaptiveValue("padding-left", 140, 30, 1);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0px 1px 2px rgba(239, 232, 232, 0.6);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(4.19deg, rgba(115, 17, 198, 0.8) -0.98%, rgba(132, 105, 209, 0.8) 89%);
+            border-radius: 50%;
+            
+            @media (max-width: $md3) { 
+                display: none;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -5%;
+            right: -5%;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(173.81deg, #2C90F7 4.43%, #94B9FF 198%);
+            border-radius: 50%;
+
+            @media (max-width: $md3) { 
+                display: none;
+            }
+        }
+
+        @media (max-width: $md3) { 
+            padding: 40px 15px;
+        }
+
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &-title {
+        &::after {
+            bottom: -5px;
+        }
+    }
+
+    &-subtitle {
+        max-width: 550px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    &-form {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 30px;
+        @include adaptiveValue("margin-top", 40, 20, 1);
+
+        @media (max-width: $md3) { 
+            row-gap: 20px;
+        }
+
+        &-input,
+        &-textarea {
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: inset 0px 1px 2px rgba(239, 232, 232, 0.6);
+            backdrop-filter: blur(1.5px);
+            border-radius: 15px;
+            padding: 0 20px;
+
+            &::placeholder {
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: calc(25 / 16);
+                color: #DCDCDC;
+            }       
+        }
+
+        &-input {
+            height: 3.43rem;
+
+            @media (max-width: $md3) { 
+                grid-column: 2 span;
+            }
+        }
+
+        &-textarea {
+            padding-top: 10px;
+            height: 7.25rem;
+            grid-column: 2 span;
+            outline: none;
+            resize: none;
+        }
+
+        &-button {
+            grid-column: 2 span;
+            justify-self: center;
+            padding: 0.75rem 2.5rem;
+        }
+    }
+
+    &-social {
+        @include adaptiveValue("margin-top", 40, 20, 1);
+    }
+}

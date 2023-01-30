@@ -1,0 +1,58 @@
+.footer {
+    position: relative;
+    @include adaptiveValue("margin-top", 100, 50, 1);
+    @include adaptiveValue("padding-top", 75, 30, 1);
+    @include adaptiveValue("padding-bottom", 75, 30, 1);
+    background-color: #171B2D;
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        column-gap: 3.12rem;
+        row-gap: 20px;
+        @media (max-width: $md4) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &-text {
+        margin-top: 10px;
+    }
+}
+
+.btn-up {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(4.19deg, rgba(97, 44, 247, 0.5) -17.59%, rgba(5, 192, 204, 0.5) 115.3%);
+
+    &::before {
+        font-size: 1rem;
+        color: #73FFF2;
+        transform: rotate(90deg);
+        animation: btnUpMove 2s infinite ease;
+        @keyframes btnUpMove {
+            0% {
+                transform: rotate(90deg) scale(1);
+                color: #73FFF2;
+            }
+    
+            50% {
+                transform: rotate(90deg) scale(0.9);
+                color: #F2994A;
+            }
+    
+            100% {
+                transform: rotate(90deg) scale(1);
+                color: #73FFF2;
+            }
+        }
+    }
+}

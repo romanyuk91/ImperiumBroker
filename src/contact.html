@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{
+	"title":"Контакты"
+	})
+	<body>
+		@@include('html/header.html',{})
+		<main>
+            <section class="contact">
+                <div class="container">
+                    <div class="contact-wrapper">
+                        <div class="contact-body" data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="contact-body-header">
+                                <h3 class="contact-title title-3">Обратная связь</h3>
+                                <p class="section-subtitle contact-subtitle text">Если у вас остались вопросы напишите нам и наши менеджеры 
+                                    свяжуться с вами как можно быстрее
+                                </p>
+                            </div>
+                            <form class="contact-form" action="#">
+                                <input class="contact-form-input" type="text" placeholder="Ваше имя" required>
+                                <input class="contact-form-input" type="email" placeholder="Ваш email" required>
+                                <textarea class="contact-form-textarea" placeholder="Сообщение"></textarea>
+                                <button class="contact-form-button button" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                        <div class="social contact-social">
+                            <h3 class="social-title title-3">Подпишись на нас:</h3>
+                            <ul class="social-list">
+                                <li class="social-item">
+                                    <a class="social-link" href="#">
+                                        <img src="@img/telegram_icon.svg" alt="telegram">
+                                        <span>Техподдержка</span>
+                                    </a>
+                                </li>
+                                <li class="social-item">
+                                    <a class="social-link" href="#">
+                                        <img src="@img/telegram_icon.svg" alt="telegram">
+                                        <span>Канал</span>
+                                    </a>
+                                </li>
+                                <li class="social-item">
+                                    <a class="social-link" href="#">
+                                        <img src="@img/telegram_icon.svg" alt="telegram">
+                                        <span>Чат</span>
+                                    </a>
+                                </li>
+                                <li class="social-item">
+                                    <a class="social-link" href="#">
+                                        <img src="@img/twitter-icon.svg" alt="twitter">
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+		</main>
+		@@include('html/footer.html',{})
+
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

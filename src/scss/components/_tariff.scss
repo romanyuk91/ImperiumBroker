@@ -1,0 +1,118 @@
+.tariff {
+    position: relative;
+    @include adaptiveValue("margin-top", 100, 50, 1);
+
+    &-bg-1 {
+        position: absolute;
+        bottom: -30%;
+        right: 0;
+
+        @media (max-width: $md3) {
+            bottom: -5%;
+        }
+    }
+
+    &-bg-2 {
+        position: absolute;
+        top: -15%;
+        left: 0;
+
+        @media (max-width: $md2) {
+            display: none;
+        }
+    }
+
+    &-list {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 30px;
+        @include adaptiveValue("margin-top", 60, 30, 1);
+
+        @media (max-width: $md2) {
+            column-gap: 25px;
+        }
+
+        @media (min-width: $md3) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(216, 4, 250, 0.04);
+        box-shadow: inset 0px 1px 2px rgba(239, 232, 232, 0.6);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 50px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: inset 0px 1px 3px rgba(239, 232, 232, 1);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: $md2) {
+            padding: 50px 25px;
+        }
+
+        &-header {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            row-gap: 15px;
+        }
+
+        &-title {
+            color: #73FFF2;
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        &-term {
+            font-weight: 600;
+            font-size: 1.15rem;
+            line-height: calc(26 / 20);
+            grid-column: 2 span;
+            span {
+                font-size: 1.25rem;
+                margin-left: 10px;
+            }
+        }
+
+        &-price {
+            font-weight: 600;
+            font-size: 2rem;
+            line-height: calc(34 / 26);
+            justify-self: end;
+            color: #F2994A;
+        }
+
+        &-list {
+            display: grid;
+            row-gap: 20px;
+            @include adaptiveValue("margin-top", 40, 15, 1);
+            @include adaptiveValue("margin-bottom", 40, 15, 1);
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            &::before {
+                color: #27AE60;
+                
+            }
+        }
+
+        &-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+    }
+
+
+}

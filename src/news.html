@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{
+	"title":"Новости"
+	})
+	<body>
+		@@include('html/header.html',{})
+		<main>
+            <section class="news">
+                <div class="container">
+                    <div class="news-wrapper">
+                        <div class="section-header" data-aos="fade-down" data-aos-duration="1500">
+                            <h2 class="section-title">Новости</h2>
+                            <p class="text">Вы можете выбрать любой тарифный план уже сейчас!</p>
+                        </div>
+                        <div class="news-list">
+                            
+                        </div>
+                        <div class="news-bottom">
+                            <button class="news-button button">Показать еще</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+		</main>
+		@@include('html/footer.html',{})
+
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

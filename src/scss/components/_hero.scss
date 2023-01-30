@@ -1,0 +1,87 @@
+.hero {
+    position: relative;
+    &-bg {
+        position: absolute;
+        top: -10px;
+        left: 0%;
+
+        @media (max-width: $md2) {
+            left: -20%;
+            width: 380px;
+        }
+
+        @media (max-width: $md3) {
+            width: 300px;
+        }
+
+        @media (max-width: $md4) {
+            left: -40%;
+        }
+    }
+
+    &-wrapper {
+        display: grid;
+        justify-content: space-between;
+        z-index: 10;
+        @include adaptiveValue("padding-top", 130, 40, 1);
+
+        @media (min-width: $md3) {
+            grid-template-columns: 35.7% 1fr;
+        }
+
+        @media (max-width: $md3) {
+            justify-items: center;
+            @include adaptiveValue("padding-top", 85, 20, 1);
+        }
+    }
+
+    &-descr {
+        z-index: 10;
+        @media (max-width: $md3) {
+           text-align: center;
+           width: 65%;
+        }
+    }
+
+    &-title {
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: calc(49 / 40);
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-text {
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 57, 20, 1);
+        }
+    }
+
+    &-button {
+        padding: 0.75rem 2.5rem;
+    }
+
+    &-image {
+        position: relative;
+        width: 100%;
+        pointer-events: none;
+        img {
+            display: block;
+            position: absolute;
+            top: -140px;
+            right: -40px;
+
+            @media (max-width: $md2) {
+                top: -100px;
+            }
+
+            @media (max-width: $md3) {
+                position: relative;
+                top: -50px;
+                right: -20px;
+            }
+        }
+    }
+}
